@@ -5,9 +5,10 @@ const colorText = 'red';
 const Title = styled.h1`
   font-size: 50px;
   color: ${colorText};
+  margin-left: 30px;
 `
 
 export default function Home() {
-  return <Title>Qualquer Valor!!!</Title>
+  return <Title>JS + React</Title>
 }
 
