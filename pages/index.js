@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 
+const colorText = 'red';
+
 const Title = styled.h1`
   font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${colorText};
 `
 
 export default function Home() {
-  return <Title>My page</Title>
+  return <Title>Qualquer Valor!!!</Title>
 }
+
