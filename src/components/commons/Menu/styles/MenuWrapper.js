@@ -73,6 +73,9 @@ export const ButtonEntrar = styled.button`
     padding: 12px 26px;
     font-weight: bold;
     opacity: 1;
+    &:hover{
+        opacity: 0.5;
+    }
     transition: opacity 200ms ease-in-out 0s;
     border-radius: 12px;
     color: rgb(251, 123, 107);
