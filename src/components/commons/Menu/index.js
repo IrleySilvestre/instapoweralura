@@ -1,5 +1,4 @@
 import React from 'react'
-import Home from '../../../../pages'
 import { Logo } from '../../../theme/logo/Logo'
 import { ButtonCadastrar, ButtonEntrar, MenuWrapper} from './styles/MenuWrapper'
 
