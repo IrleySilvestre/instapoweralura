@@ -1,14 +1,10 @@
-import styled from 'styled-components'
-
-const colorText = 'red';
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${colorText};
-  margin-left: 30px;
-`
+import Menu from "../src/components/commons/menu";
 
 export default function Home() {
-  return <Title>JS + React</Title>
+  return (
+    <div>
+      <Menu />
+    </div>
+  )
 }
 
