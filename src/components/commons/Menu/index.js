@@ -1,6 +1,7 @@
 import React from 'react'
 import { Logo } from '../../../theme/logo/Logo'
-import { ButtonCadastrar, ButtonEntrar, MenuWrapper} from './styles/MenuWrapper'
+import { ButtonCadastrar, ButtonEntrar } from './styles/Button'
+import {MenuWrapper} from './styles/MenuWrapper'
 
 const links = [
     {
@@ -35,7 +36,7 @@ export default function Menu() {
             </MenuWrapper.CentralSide>
 
             <MenuWrapper.RightSide>
-                <ButtonEntrar>Entrar</ButtonEntrar>
+                <ButtonEntrar> Entrar</ButtonEntrar>
                 <ButtonCadastrar>Cadastrar</ButtonCadastrar>
             </MenuWrapper.RightSide>
         </MenuWrapper>
