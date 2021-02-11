@@ -1,7 +1,6 @@
 import React from 'react'
 import { Logo } from '../../../theme/logo/Logo'
-import { ButtonCadastrar, ButtonEntrar } from './styles/Button'
-import {MenuWrapper} from './styles/MenuWrapper'
+import { MenuWrapper, ButtonCadastrar, ButtonEntrar } from './styles/MenuWrapper'
 
 const links = [
     {
