@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import {normalize} from 'styled-normalize'
+import { normalize } from 'styled-normalize'
 
 //CSS Reset
 export const GlobalStyle = createGlobalStyle`
@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     ${normalize}
+    
     html,
     body {
         margin: 0;
