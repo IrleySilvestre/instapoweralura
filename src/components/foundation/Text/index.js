@@ -1,7 +1,9 @@
 import React from 'react'
-import styled, { css }from 'styled-components'
+import styled, { css } from 'styled-components'
 import get from 'lodash/get';
 import PropTypes from 'prop-types';
+import { propsToStyle } from '../../../theme/utils/propToStyle';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
 
 const paragraph1 = css`
   ${({ theme }) => css`
@@ -22,12 +24,29 @@ const smallestException = css`
 export const TextStyleVariants = {
     smallestException,
     paragraph1,
+    title: css`
+    ${({ theme }) => css`
+      font-size: ${theme.typographyVariants.titleXS.fontSize};
+      font-weight: ${theme.typographyVariants.titleXS.fontWeight};
+      line-height: ${theme.typographyVariants.titleXS.lineHeight};
+    `}
+    ${breakpointsMedia ({
+      md: css`
+        ${({ theme }) => css`
+          font-size: ${theme.typographyVariants.title.fontSize};
+          font-weight: ${theme.typographyVariants.title.fontWeight};
+          line-height: ${theme.typographyVariants.title.lineHeight};
+        `}
+      `,
+    })}
+  `,
   };
 
 
 const TextBase = styled.span`
-  ${({ variant }) => TextStyleVariants[variant]}
-  color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
+  ${( props ) => TextStyleVariants[props.variant]}
+  color: ${({ theme, color }) => get(theme, `colors.${color}.color`)}
+  ${propsToStyle('textAlign')}
 `;
 
 export function Text({
@@ -56,5 +75,5 @@ export function Text({
   Text.propTypes = {
     children: PropTypes.node.isRequired,
     tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
-    variant: PropTypes.oneOf(['paragraph1', 'smallestException']),
+    variant: PropTypes.oneOf(['title', 'paragraph1', 'smallestException']),
   };
