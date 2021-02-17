@@ -44,7 +44,7 @@ export const TextStyleVariants = {
 
 
 const TextBase = styled.span`
-  ${( props ) => TextStyleVariants[props.variant]}
+  ${({variant}) => TextStyleVariants[variant]}
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)}
   ${propsToStyle('textAlign')}
 `;
@@ -55,13 +55,9 @@ export function Text({
     tag,
     ...props
   }) {
+
     return (
-      <TextBase
-        as={tag}
-        variant={variant}
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        {...props}
-      >
+      <TextBase as={tag} variant={variant} {...props}>
         {children}
       </TextBase>
     );
