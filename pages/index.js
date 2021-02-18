@@ -18,7 +18,7 @@ export default function Home() {
               tag="h1" 
               color = "tertiary.main"
               textAlign = {{
-                xd: 'center',
+                xs: 'center',
                 md: 'left',
               }} 
           >
@@ -29,7 +29,7 @@ export default function Home() {
               tag = "p" 
               color= "tertiary.light"
               textAlign = {{
-                 xd: 'center',
+                 xs: 'center',
                  md: 'left',
               }}
               >
@@ -39,7 +39,7 @@ export default function Home() {
 
         <Button 
            margin = {{
-             xd: 'auto',
+             xs: 'auto',
              md: 'initial',
            }}
           display= "block" 
