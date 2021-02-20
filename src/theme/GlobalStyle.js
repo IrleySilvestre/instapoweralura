@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: ${({ theme }) => theme.fontFamily};
     }
 
-    /* Fuyll heigt layout*/ 
+    /* Full heigt layout*/ 
 
     html, body{
         display: flex;

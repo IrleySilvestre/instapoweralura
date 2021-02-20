@@ -7,6 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "lodash": "^4.17.20",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^16.8.0",
@@ -18,5 +19,11 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^1.8.0"
   },
+
+  "resolutions": {
+    "styled-components": "^5"
+  },
+
+
   "license": "MIT"
 }
