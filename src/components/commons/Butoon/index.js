@@ -5,42 +5,50 @@ import { TextStyleVariants } from '../../../components/foundation/Text'
 import { propsToStyle } from '../../../theme/utils/propToStyle';
 
 const ButtonGhost = css`
-  color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
-  background-color: transparent;
+  color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
+  background: transparent; 
 `;
 
 const ButtonDefault = css`
-  color: ${({ theme, variant }) => get(theme, `colors.${variant}.contrastText`)};
-  background-color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
+  color: white;
+  background-color: ${function (props) {
+    return get(props.theme, `colors.${props.variant}.color`)
+  }};
+  color: ${function (props) {
+    return get(props.theme, `colors.${props.variant}.contrastText`)
+  }};
 `;
 
-
 export const Button = styled.button`
-    border: 0;
-    cursor:pointer;
-    padding: 12px 26px;
-    font-weight: bold;
-    opacity: 1;
-    transition: opacity ${({ theme }) => theme.transition};
-    border-radius: ${({ theme }) => theme.borderRadius};
-
-    ${breakpointsMedia({
-      xs: css`
-        ${TextStyleVariants.smallestException}
-        `,
-      md: css`
-        padding: 12px 43px;
-        ${TextStyleVariants.paragraph1}
-      `,
-    })}
-    
-
-    ${propsToStyle('margin')}
-    ${propsToStyle('display')}
-
-    ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)};
-    &:hover,
-    &:focus{
-        opacity: .5;
+  border: 0;
+  cursor: pointer;
+  padding: 12px 26px;
+  font-weight: bold;
+  opacity: 1;
+  border-radius: 8px;
+  ${TextStyleVariants.smallestException}
+  ${function (props) {
+    if (props.ghost) {
+      return ButtonGhost;
     }
+    return ButtonDefault
+  }}
+  transition: opacity ${({ theme }) => theme.transition};
+  border-radius: ${(props) => props.theme.borderRadius};
+  &:hover,
+  &:focus {
+    opacity: .5;
+  }
+  ${breakpointsMedia({
+    xs: css`
+      /* All devices */
+      ${TextStyleVariants.smallestException}
+    `,
+    md: css`
+     /* From md breakpoint */
+     ${TextStyleVariants.paragraph1}
+    `,
+  })}
+  ${propsToStyle('margin')}
+  ${propsToStyle('display')}
 `;
