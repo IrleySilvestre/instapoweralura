@@ -1,6 +1,6 @@
 import React from 'react'
 import { Logo } from '../../../theme/logo/Logo'
-import {Text} from '../../foundation/Text'
+import Text from '../../foundation/Text'
 import { Button } from '../Butoon'
 import { MenuWrapper } from './styles/MenuWrapper'
 
@@ -38,8 +38,8 @@ export default function Menu() {
             </MenuWrapper.CentralSide>
 
             <MenuWrapper.RightSide>
-                <Button type="button" ghost variant="secondary.main"> Entrar</Button>
-                <Button type="button" variant="primary.main">Cadastrar</Button>
+                <Button  ghost variant="secondary.main"> Entrar</Button>
+                <Button  variant="primary.main">Cadastrar</Button>
             </MenuWrapper.RightSide>
 
         </MenuWrapper>
